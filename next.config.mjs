@@ -4,9 +4,19 @@ const nextConfig = {
         serverActions: true,
         serverComponentsExternalPackages: ['mongoose']
     },
+    swcMinify: true,
+    optimizeFonts: true,
     images: {
-        domains: ['m-media-amazon.com']
-    }
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "m.media-amazon.com",
+                port: '',
+                pathname: '/images/I/**',
+            },
+        ],
+        minimumCacheTTL: 15000000,
+    },
 };
 
 export default nextConfig;
